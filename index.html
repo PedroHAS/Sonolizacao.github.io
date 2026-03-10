@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mesa do Ratinho Pro</title>
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --pad-bg: #252525;
+            --ratinho-red: #e63946;
+            --accent-blue: #a8dadc;
+            --text: #f1faee;
+            --xaropinho-yellow: #ffb703;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background: linear-gradient(180deg, var(--ratinho-red) 0%, #800000 100%);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+            margin-bottom: 25px;
+        }
+
+        h1 { margin: 0; font-size: 1.2rem; letter-spacing: 2px; text-shadow: 2px 2px 0px #000; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 90%;
+            max-width: 400px;
+            padding-bottom: 30px;
+        }
+
+        .pad {
+            background: var(--pad-bg);
+            border: 4px solid #333;
+            border-radius: 15px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #000;
+            transition: all 0.05s;
+        }
+
+        .pad:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #000;
+            background-color: var(--ratinho-red);
+            border-color: #fff;
+        }
+
+        /* Destaque para o Xaropinho */
+        .xaropinho { border-color: var(--xaropinho-yellow); color: var(--xaropinho-yellow); }
+        .xaropinho:active { background-color: var(--xaropinho-yellow); color: #000; }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.6rem;
+            opacity: 0.5;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SONOPLASTIA DO RATINHO</h1>
+</header>
+
+<div class="grid">
+    <div class="pad" onclick="play('ratinho')">RATINHOOO!</div>
+    <div class="pad xaropinho" onclick="play('xaropinho')">RAPAIIZ!</div>
+    <div class="pad" onclick="play('uepa')">UÊPA!</div>
+    <div class="pad" onclick="play('pare')">PARE!</div>
+    <div class="pad" onclick="play('cavalo')">CAVALO!</div>
+    <div class="pad" onclick="play('gosta')">ELE GOOSTA!</div>
+    <div class="pad" onclick="play('jesus')">JESUIS!</div>
+    <div class="pad" onclick="play('eita')">EITAAAA!</div>
+    <div class="pad" onclick="play('pai')">NÃO É O PAI!</div>
+    <div class="pad" onclick="play('yeeha')">YEE-HA!</div>
+</div>
+
+
+<audio id="ratinho" src="sons/ratinhooo_1.mp3"></audio>
+<audio id="xaropinho" src="sons/vinheta-xaropinho-rapaz_dx3f4Be.mp3"></audio>
+<audio id="uepa" src="sons/uepa-mp3cut.mp3"></audio>
+<audio id="pare" src="sons/pare.mp3"></audio>
+<audio id="cavalo" src="sons/cavalo-ratinho.mp3"></audio>
+<audio id="gosta" src="sons/ele-goooooooooooooosta.mp3"></audio>
+<audio id="jesus" src="sons/jesus-ratinho.mp3"></audio>
+<audio id="eita" src="sons/aaaaaaaaaaeeeeeeitaaaaa.mp3"></audio>
+<audio id="pai" src="sons/nao-e-o-pai.mp3"></audio>
+<audio id="yeeha" src="sons/comedy-male-yelling-yee-ha-sound-effects-free-download-mp3cut.mp3"></audio>
+
+<script>
+    function play(id) {
+        const audio = document.getElementById(id);
+        if (audio) {
+            audio.currentTime = 0;
+            audio.play().catch(e => console.log("Toque na tela para ativar o som."));
+            
+            if (navigator.vibrate) {
+                navigator.vibrate(40);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
