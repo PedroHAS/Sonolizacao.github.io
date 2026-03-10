@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sonoplastia Pro - PedroHAS</title>
+    <title>Sonoplastia Suprema - PedroHAS</title>
     <link rel="icon" type="image/png" href="image_4dfefd.png">
     <style>
         :root {
@@ -11,6 +11,8 @@
             --red: #d90429;
             --yellow: #ffb703;
             --blue: #3a86ff;
+            --green: #06d6a0;
+            --purple: #8338ec;
             --pad: #2b2d42;
         }
 
@@ -22,7 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 50px;
+            padding-bottom: 60px;
         }
 
         #flash {
@@ -38,7 +40,7 @@
         header {
             background: var(--red);
             width: 100%;
-            padding: 15px 0;
+            padding: 10px 0;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             position: sticky;
@@ -46,53 +48,59 @@
             z-index: 100;
         }
 
-        .logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--yellow); }
+        .logo { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--yellow); }
 
         h2 {
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: var(--yellow);
-            margin: 20px 0 10px 0;
+            margin: 25px 0 10px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
+            background: rgba(255,255,255,0.05);
+            width: 100%;
+            text-align: center;
+            padding: 5px 0;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 0 20px;
-            width: 90%;
+            gap: 10px;
+            padding: 0 15px;
+            width: 95%;
             max-width: 450px;
         }
 
         .pad {
             background: var(--pad);
             border: 3px solid #3d405b;
-            border-radius: 12px;
-            padding: 18px 10px;
+            border-radius: 10px;
+            padding: 15px 5px;
             text-align: center;
-            font-size: 0.7rem;
+            font-size: 0.62rem;
             text-transform: uppercase;
-            box-shadow: 0 5px 0 #000;
+            box-shadow: 0 4px 0 #000;
             cursor: pointer;
             transition: 0.05s;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 55px;
+            min-height: 50px;
+            line-height: 1.2;
         }
 
         .pad:active {
-            transform: translateY(4px);
+            transform: translateY(3px);
             box-shadow: 0 1px 0 #000;
             background: var(--yellow);
             color: black;
         }
 
-        .section-memes .pad { border-color: var(--blue); }
-        .section-memes .pad:active { background: var(--blue); color: white; }
+        .section-tv .pad { border-color: var(--blue); }
+        .section-memes .pad { border-color: var(--green); }
+        .section-efeitos .pad { border-color: var(--purple); }
 
-        footer { margin-top: 30px; font-size: 0.6rem; opacity: 0.4; text-align: center; }
+        footer { margin-top: 40px; font-size: 0.6rem; opacity: 0.4; text-align: center; padding: 20px; }
     </style>
 </head>
 <body>
@@ -101,7 +109,7 @@
 
 <header>
     <img src="image_4dfefd.png" class="logo">
-    <div style="font-size: 0.8rem;">SONOPLASTIA RATINHO & MEMES</div>
+    <div style="font-size: 0.7rem;">MESA DE SOM SUPREMA (43 SONS)</div>
 </header>
 
 <h2>Ratinho & Cia</h2>
@@ -109,13 +117,29 @@
     <div class="pad" onclick="play('ratinho')">RATINHOOO!</div>
     <div class="pad" onclick="play('xaropinho')" style="border-color: var(--yellow)">RAPAIIZ!</div>
     <div class="pad" onclick="play('uepa')">UÊPA!</div>
-    <div class="pad" onclick="play('epaaaaa')">EPAAAAA!</div>
+    <div class="pad" onclick="play('epa')">EPA!</div>
     <div class="pad" onclick="play('pare')">PARE!</div>
     <div class="pad" onclick="play('cavalo')">CAVALO!</div>
     <div class="pad" onclick="play('gosta')">ELE GOOSTA!</div>
     <div class="pad" onclick="play('jesus')">JESUIS!</div>
     <div class="pad" onclick="play('eita')">EITAAAA!</div>
     <div class="pad" onclick="play('pai')">NÃO É O PAI!</div>
+    <div class="pad" onclick="play('yeeha')">YEE-HA!</div>
+</div>
+
+<h2>TV & Cinema</h2>
+<div class="grid section-tv">
+    <div class="pad" onclick="play('herbert')">HERBERT RICHERS</div>
+    <div class="pad" onclick="play('jn')">JORNAL NACIONAL</div>
+    <div class="pad" onclick="play('jacquin')">JACQUIN (CALA BOCA)</div>
+    <div class="pad" onclick="play('pele')">FILME DO PELÉ</div>
+    <div class="pad" onclick="play('madruga')">NÃO! (MADRUGA)</div>
+    <div class="pad" onclick="play('familia')">GRANDE FAMÍLIA</div>
+    <div class="pad" onclick="play('brasil')">BRASIIIIL!</div>
+    <div class="pad" onclick="play('acontecendo')">O QUE TÁ HAVENDO?</div>
+    <div class="pad" onclick="play('gugu')">GUGU? (FARO)</div>
+    <div class="pad" onclick="play('vitoria')">TEMA DA VITÓRIA</div>
+    <div class="pad" onclick="play('cafe')">QUERO CAFÉ!</div>
 </div>
 
 <h2>Memes Variados</h2>
@@ -123,85 +147,87 @@
     <div class="pad" onclick="play('heehee')">HEE-HEE! (MJ)</div>
     <div class="pad" onclick="play('ui')">UUUI! (FARO)</div>
     <div class="pad" onclick="play('tome')">TOME! (FARO)</div>
-    <div class="pad" onclick="play('vine')">VINE BOOM</div>
-    <div class="pad" onclick="play('omg')">OH MY GOD!</div>
-    <div class="pad" onclick="play('chaves')">AI CHAVES!</div>
+    <div class="pad" onclick="play('faro_ai')">AIAIAI (FARO)</div>
+    <div class="pad" onclick="play('chaves_ai')">AI CHAVES!</div>
     <div class="pad" onclick="play('pabllo')">AI DELÍCIA</div>
     <div class="pad" onclick="play('lula')">LULA AJUDA</div>
+    <div class="pad" onclick="play('mamae')">AII MAMÃE</div>
+    <div class="pad" onclick="play('lula_ajuda')">LULA ME AJUDA</div>
+    <div class="pad" onclick="play('amigo')">OBRIGADO AMIGO</div>
+    <div class="pad" onclick="play('omg')">OH MY GOD!</div>
+</div>
+
+<h2>Efeitos Sonoros</h2>
+<div class="grid section-efeitos">
+    <div class="pad" onclick="play('chicote')">CHICOTE!</div>
+    <div class="pad" onclick="play('vine')">VINE BOOM</div>
+    <div class="pad" onclick="play('romance')">ROMANCEEEE</div>
     <div class="pad" onclick="play('errou')">ERROOOOU!</div>
-    <div class="pad" onclick="play('vitoria')">VITÓRIA!</div>
+    <div class="pad" onclick="play('aaal')">AAAL!</div>
+    <div class="pad" onclick="play('aiai')">AI AI AI!</div>
+    <div class="pad" onclick="play('demaals')">DEMAAALS!</div>
+    <div class="pad" onclick="play('demais_q')">QUE DEMAIS!</div>
     <div class="pad" onclick="play('wow')">WOW!</div>
     <div class="pad" onclick="play('gop')">GOP GOP GOP</div>
 </div>
 
 
-<div id="audio-container">
-    <audio id="ratinho" src="sons/ratinhooo_1.mp3"></audio>
-    <audio id="xaropinho" src="sons/vinheta-xaropinho-rapaz_dx3f4Be.mp3"></audio>
-    <audio id="uepa" src="sons/uepa-mp3cut.mp3"></audio>
-    <audio id="epaaaaa" src="sons/epaaaaa.mp3"></audio>
-    <audio id="pare" src="sons/pare.mp3"></audio>
-    <audio id="cavalo" src="sons/cavalo-ratinho.mp3"></audio>
-    <audio id="gosta" src="sons/ele-goooooooooooooosta.mp3"></audio>
-    <audio id="jesus" src="sons/jesus-ratinho.mp3"></audio>
+<div id="audio-container" style="display:none;">
     <audio id="eita" src="sons/aaaaaaaaaaeeeeeeitaaaaa.mp3"></audio>
-    <audio id="pai" src="sons/nao-e-o-pai.mp3"></audio>
-    
-    <audio id="heehee" src="sons/michael-jackson-hee-hee.mp3"></audio>
-    <audio id="ui" src="sons/ui-rodrigo-faro.mp3"></audio>
-    <audio id="tome" src="sons/tome-rodrigo-faro_xDXKGwq.mp3"></audio>
-    <audio id="vine" src="sons/vine-boom-sound-effect_KT89XIq.mp3"></audio>
-    <audio id="omg" src="sons/oh-my-god-meme.mp3"></audio>
-    <audio id="chaves" src="sons/ai-chaves-breno.mp3"></audio>
-    <audio id="pabllo" src="sons/pabllo-vittar-aiin-q-deliciaann-uarroinn-original.mp3"></audio>
-    <audio id="lula" src="sons/lula-por-favor-me-ajuda_5UqDBWj.mp3"></audio>
-    <audio id="errou" src="sons/wrong-answer-sound-effect.mp3"></audio>
+    <audio id="aaal" src="sons/aaal.mp3"></audio>
+    <audio id="aiai" src="sons/aiai_1.mp3"></audio>
+    <audio id="faro_ai" src="sons/aiaiai-rodrigo-faro.mp3"></audio>
+    <audio id="chaves_ai" src="sons/ai-chaves-breno.mp3"></audio>
+    <audio id="mamae" src="sons/aii-mamae.mp3"></audio>
     <audio id="vitoria" src="sons/ayrton-senna-tema-da-vitoria.mp3"></audio>
-    <audio id="wow" src="sons/wow_8.mp3"></audio>
+    <audio id="brasil" src="sons/brasil.mp3"></audio>
+    <audio id="cavalo" src="sons/cavalo-ratinho.mp3"></audio>
+    <audio id="pele" src="sons/chaves-teria-sido-melhor-ir-ver-o-filme-do-pele1.mp3"></audio>
+    <audio id="chicote" src="sons/chicote_oot5qIw.mp3"></audio>
+    <audio id="yeeha" src="sons/comedy-male-yelling-yee-ha-sound-effects-free-download-mp3cut.mp3"></audio>
+    <audio id="yeeha2" src="sons/comedy-male-yelling-yee-ha-sound-effects-free-download-mp3cut_j2j7iwO.mp3"></audio>
+    <audio id="demaals" src="sons/demaals.mp3"></audio>
+    <audio id="gosta" src="sons/ele-goooooooooooooosta.mp3"></audio>
+    <audio id="epa" src="sons/epaaaaa.mp3"></audio>
     <audio id="gop" src="sons/gopgopgop.mp3"></audio>
+    <audio id="familia" src="sons/grandefamliapardiashrek.mp3"></audio>
+    <audio id="jacquin" src="sons/jacquin-manda-cala-boca.mp3"></audio>
+    <audio id="jesus" src="sons/jesus-ratinho.mp3"></audio>
+    <audio id="jn" src="sons/jornal-nacional-escalada-e-abertura.mp3"></audio>
+    <audio id="lula_ajuda" src="sons/lula-por-favor-me-ajuda_5UqDBWj.mp3"></audio>
+    <audio id="acontecendo" src="sons/mas-oque-que-esta-acontecendo.mp3"></audio>
+    <audio id="heehee" src="sons/michael-jackson-hee-hee.mp3"></audio>
+    <audio id="pai" src="sons/nao-e-o-pai.mp3"></audio>
+    <audio id="amigo" src="sons/obrigado-amigo-voce-e-um-amigo_IbsqnT7.mp3"></audio>
+    <audio id="omg" src="sons/oh-my-god-meme.mp3"></audio>
+    <audio id="pabllo" src="sons/pabllo-vittar-aiin-q-deliciaann-uarroinn-original.mp3"></audio>
+    <audio id="pare" src="sons/pare.mp3"></audio>
+    <audio id="demais_q" src="sons/que-demais_2.mp3"></audio>
+    <audio id="cafe" src="sons/quero-cafe-mp3cut.mp3"></audio>
+    <audio id="ratinho" src="sons/ratinhooo_1.mp3"></audio>
+    <audio id="gugu" src="sons/rodrigo-faro-falando-gugu.mp3"></audio>
+    <audio id="romance" src="sons/romanceeeeeeeeeeeeee.mp3"></audio>
+    <audio id="madruga" src="sons/seu-madruga-diz-nao.mp3"></audio>
+    <audio id="tome" src="sons/tome-rodrigo-faro_xDXKGwq.mp3"></audio>
+    <audio id="uepa" src="sons/uepa-mp3cut.mp3"></audio>
+    <audio id="ui" src="sons/ui-rodrigo-faro.mp3"></audio>
+    <audio id="herbert" src="sons/versao-brasileira-herbert-richers.mp3"></audio>
+    <audio id="vine" src="sons/vine-boom-sound-effect_KT89XIq.mp3"></audio>
+    <audio id="xaropinho" src="sons/vinheta-xaropinho-rapaz_dx3f4Be.mp3"></audio>
+    <audio id="wow" src="sons/wow_8.mp3"></audio>
+    <audio id="errou" src="sons/wrong-answer-sound-effect.mp3"></audio>
 </div>
 
 <script>
     function play(id) {
         const audio = document.getElementById(id);
         const flash = document.getElementById('flash');
-        
         if (audio) {
             audio.currentTime = 0;
-            audio.play();
-            
+            audio.play().catch(e => console.log("Interaja com a página primeiro"));
             flash.style.opacity = "0.15";
             setTimeout(() => flash.style.opacity = "0", 80);
-
             if (navigator.vibrate) navigator.vibrate(30);
-        }
-    }
-</script>
-
-</body>
-</html>
-
-<audio id="ratinho" src="sons/ratinhooo_1.mp3"></audio>
-<audio id="xaropinho" src="sons/vinheta-xaropinho-rapaz_dx3f4Be.mp3"></audio>
-<audio id="uepa" src="sons/uepa-mp3cut.mp3"></audio>
-<audio id="pare" src="sons/pare.mp3"></audio>
-<audio id="cavalo" src="sons/cavalo-ratinho.mp3"></audio>
-<audio id="gosta" src="sons/ele-goooooooooooooosta.mp3"></audio>
-<audio id="jesus" src="sons/jesus-ratinho.mp3"></audio>
-<audio id="eita" src="sons/aaaaaaaaaaeeeeeeitaaaaa.mp3"></audio>
-<audio id="pai" src="sons/nao-e-o-pai.mp3"></audio>
-<audio id="yeeha" src="sons/comedy-male-yelling-yee-ha-sound-effects-free-download-mp3cut.mp3"></audio>
-
-<script>
-    function play(id) {
-        const audio = document.getElementById(id);
-        if (audio) {
-            audio.currentTime = 0;
-            audio.play().catch(e => console.log("Toque na tela para ativar o som."));
-            
-            if (navigator.vibrate) {
-                navigator.vibrate(40);
-            }
         }
     }
 </script>
